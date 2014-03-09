@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.wolversoft.com/ShowCase/IProductService/230132111" elementFormDefault="qualified" targetNamespace="http://www.wolversoft.com/ShowCase/IProductService/230132111" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd2" namespace="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd4" namespace="http://www.wolversoft.com/ShowCase/Model/BrandFilter/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd5" namespace="http://www.wolversoft.com/ShowCase/Model/Category/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd6" namespace="http://www.wolversoft.com/ShowCase/Model/CategoryFilter/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd7" namespace="http://www.wolversoft.com/ShowCase/Model/Product/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd8" namespace="http://www.wolversoft.com/ShowCase/Model/ProductFilter/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd9" namespace="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" />
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd10" namespace="http://www.wolversoft.com/ShowCase/Model/ProviderFilter/20131120" />
+  <xs:element name="InsertBrand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" minOccurs="0" name="brand" nillable="true" type="q1:Brand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertBrandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertBrandResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBrand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" minOccurs="0" name="brand" nillable="true" type="q2:Brand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBrandResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredBrands">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.wolversoft.com/ShowCase/Model/BrandFilter/20131120" minOccurs="0" name="filter" nillable="true" type="q3:BrandFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredBrandsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" minOccurs="0" name="GetFilteredBrandsResult" nillable="true" type="q4:ArrayOfBrand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.wolversoft.com/ShowCase/Model/Category/20131120" minOccurs="0" name="category" nillable="true" type="q5:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertCategoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertCategoryResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCategory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.wolversoft.com/ShowCase/Model/Category/20131120" minOccurs="0" name="category" nillable="true" type="q6:Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCategoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.wolversoft.com/ShowCase/Model/CategoryFilter/20131120" minOccurs="0" name="filter" nillable="true" type="q7:CategoryFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.wolversoft.com/ShowCase/Model/Category/20131120" minOccurs="0" name="GetFilteredCategoriesResult" nillable="true" type="q8:ArrayOfCategory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.wolversoft.com/ShowCase/Model/Product/20131120" minOccurs="0" name="product" nillable="true" type="q9:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProductResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertProductResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProduct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.wolversoft.com/ShowCase/Model/Product/20131120" minOccurs="0" name="product" nillable="true" type="q10:Product" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProductResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredProducts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.wolversoft.com/ShowCase/Model/ProductFilter/20131120" minOccurs="0" name="filter" nillable="true" type="q11:ProductFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredProductsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.wolversoft.com/ShowCase/Model/Product/20131120" minOccurs="0" name="GetFilteredProductsResult" nillable="true" type="q12:ArrayOfProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProvider">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" minOccurs="0" name="provider" nillable="true" type="q13:Provider" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertProviderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertProviderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProvider">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" minOccurs="0" name="provider" nillable="true" type="q14:Provider" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProviderResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredProviders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.wolversoft.com/ShowCase/Model/ProviderFilter/20131120" minOccurs="0" name="filter" nillable="true" type="q15:ProviderFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFilteredProvidersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" minOccurs="0" name="GetFilteredProvidersResult" nillable="true" type="q16:ArrayOfProvider" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

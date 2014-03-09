@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.wolversoft.com/ShowCase/Model/BrandFilter/20131120" elementFormDefault="qualified" targetNamespace="http://www.wolversoft.com/ShowCase/Model/BrandFilter/20131120" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd2" namespace="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" />
+  <xs:complexType name="BrandFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" base="q1:Brand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IncludeInactive" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BrandFilter" nillable="true" type="tns:BrandFilter" />
+</xs:schema>

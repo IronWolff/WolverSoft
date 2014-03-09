@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.wolversoft.com/ShowCase/IProductService/230132111" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.wolversoft.com/ShowCase/IProductService/230132111" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.wolversoft.com/ShowCase/IProductService/230132111/Imports">
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd0" namespace="http://www.wolversoft.com/ShowCase/IProductService/230132111" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd2" namespace="http://www.wolversoft.com/ShowCase/Model/Brand/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd4" namespace="http://www.wolversoft.com/ShowCase/Model/BrandFilter/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd5" namespace="http://www.wolversoft.com/ShowCase/Model/Category/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd6" namespace="http://www.wolversoft.com/ShowCase/Model/CategoryFilter/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd7" namespace="http://www.wolversoft.com/ShowCase/Model/Product/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd8" namespace="http://www.wolversoft.com/ShowCase/Model/ProductFilter/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd9" namespace="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" />
+      <xsd:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd10" namespace="http://www.wolversoft.com/ShowCase/Model/ProviderFilter/20131120" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProductService_InsertBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBrand" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertBrand_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q1:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBrand" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateBrand_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q2:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredBrands_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredBrands" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredBrands_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredBrands_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q3:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertCategory_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q4:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateCategory_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q5:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredCategories" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredCategories_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q6:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProduct_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q7:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProduct_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q8:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredProducts" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProducts_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q9:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProvider" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_InsertProvider_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q10:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProvider" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateProvider_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q11:ServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredProviders" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilteredProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetFilteredProviders_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/WS.ShowCase.Model.Models" name="detail" element="q12:ServiceFault" />
+  </wsdl:message>
+  <wsdl:portType name="IProductService">
+    <wsdl:operation name="InsertBrand">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertBrand" message="tns:IProductService_InsertBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertBrandResponse" message="tns:IProductService_InsertBrand_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertBrandServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_InsertBrand_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBrand">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateBrand" message="tns:IProductService_UpdateBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateBrandResponse" message="tns:IProductService_UpdateBrand_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateBrandServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_UpdateBrand_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredBrands">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredBrands" message="tns:IProductService_GetFilteredBrands_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredBrandsResponse" message="tns:IProductService_GetFilteredBrands_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredBrandsServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_GetFilteredBrands_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCategory">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertCategory" message="tns:IProductService_InsertCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertCategoryResponse" message="tns:IProductService_InsertCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertCategoryServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_InsertCategory_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateCategory" message="tns:IProductService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateCategoryResponse" message="tns:IProductService_UpdateCategory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateCategoryServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_UpdateCategory_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredCategories">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredCategories" message="tns:IProductService_GetFilteredCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredCategoriesResponse" message="tns:IProductService_GetFilteredCategories_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredCategoriesServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_GetFilteredCategories_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProduct">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProduct" message="tns:IProductService_InsertProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProductResponse" message="tns:IProductService_InsertProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProductServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_InsertProduct_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProduct" message="tns:IProductService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProductResponse" message="tns:IProductService_UpdateProduct_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProductServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_UpdateProduct_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredProducts">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProducts" message="tns:IProductService_GetFilteredProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProductsResponse" message="tns:IProductService_GetFilteredProducts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProductsServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_GetFilteredProducts_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertProvider">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProvider" message="tns:IProductService_InsertProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProviderResponse" message="tns:IProductService_InsertProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/InsertProviderServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_InsertProvider_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProvider">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProvider" message="tns:IProductService_UpdateProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProviderResponse" message="tns:IProductService_UpdateProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/UpdateProviderServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_UpdateProvider_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilteredProviders">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProviders" message="tns:IProductService_GetFilteredProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProvidersResponse" message="tns:IProductService_GetFilteredProviders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/ShowCase/IProductService/230132111/IProductService/GetFilteredProvidersServiceFaultFault" name="ServiceFaultFault" message="tns:IProductService_GetFilteredProviders_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

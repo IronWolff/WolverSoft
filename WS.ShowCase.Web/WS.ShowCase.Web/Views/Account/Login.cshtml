@@ -1,0 +1,57 @@
+﻿@model WS.ShowCase.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+<section id="loginForm">
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <table id="loginTable">
+            <tr>
+                <td>@Html.LabelFor(m => m.UserName)</td>
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+                <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.Password)</td>
+                <td>@Html.PasswordFor(m => m.Password)</td>
+                <td>@Html.ValidationMessageFor(m => m.Password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
+                <td>@Html.CheckBoxFor(m => m.RememberMe, new { @style = "float:left; margin-left:10px;" })</td>
+            </tr>
+            <tr>
+                @*<td>@Html.ActionLink("Register", "Register") if you don't have an account.</td>*@
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="button" onclick="PerformLogin();" value="Login" style="float:right"/>
+                </td>
+            </tr>
+        </table>
+    }
+</section>
+
+<section class="social" id="socialLoginForm">
+    @*<h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })*@
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<style type="text/css">
+    #loginTable {
+        text-align: right;
+    }
+
+    #loginTable, tr, td {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+</style>

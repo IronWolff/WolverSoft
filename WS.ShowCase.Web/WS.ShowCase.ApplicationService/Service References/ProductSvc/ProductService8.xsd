@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.wolversoft.com/ShowCase/Model/ProviderFilter/20131120" elementFormDefault="qualified" targetNamespace="http://www.wolversoft.com/ShowCase/Model/ProviderFilter/20131120" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3023/ProductService.svc?xsd=xsd9" namespace="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" />
+  <xs:complexType name="ProviderFilter">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.wolversoft.com/ShowCase/Model/Provider/20131120" base="q1:Provider">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IncludeInactive" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProviderFilter" nillable="true" type="tns:ProviderFilter" />
+</xs:schema>
