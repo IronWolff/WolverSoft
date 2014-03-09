@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD243DC2-91D8-425E-9391-A0BBF8686E7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WS.Security.Services.BussinesLogic</RootNamespace>
+    <AssemblyName>WS.Security.Services.BussinesLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\UserSecurityBLService.cs" />
+    <Compile Include="Interface\UserSecurityServiceBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WS.Security.DataAccess\WS.Security.DataAccess.csproj">
+      <Project>{0a3e6049-a905-4056-be43-2989d108a1ed}</Project>
+      <Name>WS.Security.DataAccess %28WS.Security.DataAccess\WS.Security.DataAccess%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Exceptions\WS.Security.Exceptions.csproj">
+      <Project>{b7e42572-c5c3-4083-b9d2-542c6b0f2bf3}</Project>
+      <Name>WS.Security.Exceptions %28WS.Security.Exceptions\WS.Security.Exceptions%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Model\WS.Security.Model.csproj">
+      <Project>{1e7ce344-3cdc-45fc-ad60-a3578f32b984}</Project>
+      <Name>WS.Security.Model %28WS.Security.Model\WS.Security.Model%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Repository\WS.Security.Repository.csproj">
+      <Project>{a5f596b2-dbcf-4aa6-86ca-2e67a730f085}</Project>
+      <Name>WS.Security.Repository %28WS.Security.Repository\WS.Security.Repository%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Services.Task\WS.Security.Services.Task.csproj">
+      <Project>{cae85efc-560d-43bf-bac5-88f9aebd0e68}</Project>
+      <Name>WS.Security.Services.Task %28WS.Security.Services.Task\WS.Security.Services.Task%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

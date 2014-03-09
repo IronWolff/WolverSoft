@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WS.Security.Repository</RootNamespace>
+    <AssemblyName>WS.Security.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WolverUtilities">
+      <HintPath>..\Binaries\WolverUtilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adapters\ApplicationAdapter.cs" />
+    <Compile Include="Adapters\ApplicationModuleAdapter.cs" />
+    <Compile Include="Adapters\PermissionAdapter.cs" />
+    <Compile Include="Adapters\RoleAdapter.cs" />
+    <Compile Include="Adapters\UserAdapter.cs" />
+    <Compile Include="Enums\CryptoType.cs" />
+    <Compile Include="Filters\ApplicationFilter.cs" />
+    <Compile Include="Filters\ApplicationModuleFilter.cs" />
+    <Compile Include="Filters\PermissionFilter.cs" />
+    <Compile Include="Filters\RoleFilter.cs" />
+    <Compile Include="Filters\UserFilter.cs" />
+    <Compile Include="Implementation\UserRepository.cs" />
+    <Compile Include="Implementation\UserSecurityRepository.cs" />
+    <Compile Include="Interface\IUserSecurityRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WS.Security.DataAccess\WS.Security.DataAccess.csproj">
+      <Project>{0a3e6049-a905-4056-be43-2989d108a1ed}</Project>
+      <Name>WS.Security.DataAccess %28WS.Security.DataAccess\WS.Security.DataAccess%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Exceptions\WS.Security.Exceptions.csproj">
+      <Project>{b7e42572-c5c3-4083-b9d2-542c6b0f2bf3}</Project>
+      <Name>WS.Security.Exceptions %28WS.Security.Exceptions\WS.Security.Exceptions%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.Security.Model\WS.Security.Model.csproj">
+      <Project>{1e7ce344-3cdc-45fc-ad60-a3578f32b984}</Project>
+      <Name>WS.Security.Model %28WS.Security.Model\WS.Security.Model%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

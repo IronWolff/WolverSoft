@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Exceptions", "WS.Security.Exceptions", "{E56EFD06-2EE4-4CAB-8329-2D7EF82E5202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.Exceptions", "WS.Security.Exceptions\WS.Security.Exceptions.csproj", "{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Model", "WS.Security.Model", "{CB841409-57D7-4F58-B9D9-A869186694FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.Model", "WS.Security.Model\WS.Security.Model.csproj", "{1E7CE344-3CDC-45FC-AD60-A3578F32B984}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Repository", "WS.Security.Repository", "{A4FD0A62-3257-4E4B-AAFD-6D447169608F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.Repository", "WS.Security.Repository\WS.Security.Repository.csproj", "{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.DataAccess", "WS.Security.DataAccess", "{E57E874C-65FB-46F4-BF8F-4E68229EEB0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.DataAccess", "WS.Security.DataAccess\WS.Security.DataAccess.csproj", "{0A3E6049-A905-4056-BE43-2989D108A1ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binaries", "Binaries", "{343DFCBA-F351-4B9F-AA0A-7CCAFAA075A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\Wolver\Documents\Visual Studio 2012\Projects\WolverUtilities\WolverUtilities\bin\Debug\WolverUtilities.dll = ..\..\..\Users\Wolver\Documents\Visual Studio 2012\Projects\WolverUtilities\WolverUtilities\bin\Debug\WolverUtilities.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Services.BussinesLogic", "WS.Security.Services.BussinesLogic", "{B0ACF350-41AB-4731-AB0D-A7929BAACE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.Services.BussinesLogic", "WS.Security.Services.BussinesLogic\WS.Security.Services.BussinesLogic.csproj", "{DD243DC2-91D8-425E-9391-A0BBF8686E7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Services.Task", "WS.Security.Services.Task", "{460676A6-D5BD-414C-9B6A-7AA34BD629E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Security.Services.Task", "WS.Security.Services.Task\WS.Security.Services.Task.csproj", "{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WS.Security.Services.Task.Wcf", "WS.Security.Services.Task.Wcf", "{E14E43D2-79C9-4A40-A0BB-4AF257008A47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Services.Task.Wcf", "WS.Services.Task.Wcf\WS.Services.Task.Wcf.csproj", "{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E7CE344-3CDC-45FC-AD60-A3578F32B984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E7CE344-3CDC-45FC-AD60-A3578F32B984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E7CE344-3CDC-45FC-AD60-A3578F32B984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E7CE344-3CDC-45FC-AD60-A3578F32B984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F596B2-DBCF-4AA6-86CA-2E67A730F085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3E6049-A905-4056-BE43-2989D108A1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3E6049-A905-4056-BE43-2989D108A1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3E6049-A905-4056-BE43-2989D108A1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3E6049-A905-4056-BE43-2989D108A1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD243DC2-91D8-425E-9391-A0BBF8686E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD243DC2-91D8-425E-9391-A0BBF8686E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD243DC2-91D8-425E-9391-A0BBF8686E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD243DC2-91D8-425E-9391-A0BBF8686E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B7E42572-C5C3-4083-B9D2-542C6B0F2BF3} = {E56EFD06-2EE4-4CAB-8329-2D7EF82E5202}
+		{1E7CE344-3CDC-45FC-AD60-A3578F32B984} = {CB841409-57D7-4F58-B9D9-A869186694FF}
+		{A5F596B2-DBCF-4AA6-86CA-2E67A730F085} = {A4FD0A62-3257-4E4B-AAFD-6D447169608F}
+		{0A3E6049-A905-4056-BE43-2989D108A1ED} = {E57E874C-65FB-46F4-BF8F-4E68229EEB0C}
+		{DD243DC2-91D8-425E-9391-A0BBF8686E7F} = {B0ACF350-41AB-4731-AB0D-A7929BAACE5F}
+		{CAE85EFC-560D-43BF-BAC5-88F9AEBD0E68} = {460676A6-D5BD-414C-9B6A-7AA34BD629E6}
+		{4E63FEC9-CBE9-4A4E-BECA-00F57C5567B3} = {E14E43D2-79C9-4A40-A0BB-4AF257008A47}
+	EndGlobalSection
+EndGlobal

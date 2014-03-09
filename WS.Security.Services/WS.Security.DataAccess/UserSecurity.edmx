@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UserSecurityModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="UserSecurityModelStoreContainer">
+          <EntitySet Name="Application" EntityType="UserSecurityModel.Store.Application" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ApplicationModule" EntityType="UserSecurityModel.Store.ApplicationModule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PermissionLevel" EntityType="UserSecurityModel.Store.PermissionLevel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="UserSecurityModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolePermission" EntityType="UserSecurityModel.Store.RolePermission" store:Type="Tables" store:Schema="dbo" store:Name="RolePermission">
+            <DefiningQuery>SELECT 
+      [RolePermission].[RoleId] AS [RoleId], 
+      [RolePermission].[ApplicationModuleId] AS [ApplicationModuleId], 
+      [RolePermission].[PermissionLevelId] AS [PermissionLevelId]
+      FROM [dbo].[RolePermission] AS [RolePermission]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="User" EntityType="UserSecurityModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ApplicationModule_Application" Association="UserSecurityModel.Store.FK_ApplicationModule_Application">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ApplicationModule" EntitySet="ApplicationModule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_ApplicationModule" Association="UserSecurityModel.Store.FK_RolePermission_ApplicationModule">
+            <End Role="ApplicationModule" EntitySet="ApplicationModule" />
+            <End Role="RolePermission" EntitySet="RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_PermissionLevel" Association="UserSecurityModel.Store.FK_RolePermission_PermissionLevel">
+            <End Role="PermissionLevel" EntitySet="PermissionLevel" />
+            <End Role="RolePermission" EntitySet="RolePermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Role" Association="UserSecurityModel.Store.FK_RolePermission_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="RolePermission" EntitySet="RolePermission" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApplicationCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApplicationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ApplicationModule">
+          <Key>
+            <PropertyRef Name="ApplicationModuleId" />
+          </Key>
+          <Property Name="ApplicationModuleId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApplicationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PermissionLevel">
+          <Key>
+            <PropertyRef Name="PermissionLevelId" />
+          </Key>
+          <Property Name="PermissionLevelId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'UserSecurity.dbo.RolePermission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ApplicationModuleId" />
+            <PropertyRef Name="PermissionLevelId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="ApplicationModuleId" Type="int" Nullable="false" />
+          <Property Name="PermissionLevelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="MustChangePassword" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ApplicationModule_Application">
+          <End Role="Application" Type="UserSecurityModel.Store.Application" Multiplicity="1" />
+          <End Role="ApplicationModule" Type="UserSecurityModel.Store.ApplicationModule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="ApplicationModule">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_ApplicationModule">
+          <End Role="ApplicationModule" Type="UserSecurityModel.Store.ApplicationModule" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.Store.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationModule">
+              <PropertyRef Name="ApplicationModuleId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="ApplicationModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_PermissionLevel">
+          <End Role="PermissionLevel" Type="UserSecurityModel.Store.PermissionLevel" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.Store.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermissionLevel">
+              <PropertyRef Name="PermissionLevelId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="PermissionLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Role">
+          <End Role="Role" Type="UserSecurityModel.Store.Role" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.Store.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UserSecurityModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="UserSecurityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="UserSecurityModel.Application" />
+          <EntitySet Name="ApplicationModules" EntityType="UserSecurityModel.ApplicationModule" />
+          <EntitySet Name="PermissionLevels" EntityType="UserSecurityModel.PermissionLevel" />
+          <EntitySet Name="Roles" EntityType="UserSecurityModel.Role" />
+          <EntitySet Name="RolePermissions" EntityType="UserSecurityModel.RolePermission" />
+          <EntitySet Name="Users" EntityType="UserSecurityModel.User" />
+          <AssociationSet Name="FK_ApplicationModule_Application" Association="UserSecurityModel.FK_ApplicationModule_Application">
+            <End Role="Application" EntitySet="Applications" />
+            <End Role="ApplicationModule" EntitySet="ApplicationModules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_ApplicationModule" Association="UserSecurityModel.FK_RolePermission_ApplicationModule">
+            <End Role="ApplicationModule" EntitySet="ApplicationModules" />
+            <End Role="RolePermission" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_PermissionLevel" Association="UserSecurityModel.FK_RolePermission_PermissionLevel">
+            <End Role="PermissionLevel" EntitySet="PermissionLevels" />
+            <End Role="RolePermission" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermission_Role" Association="UserSecurityModel.FK_RolePermission_Role">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="RolePermission" EntitySet="RolePermissions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationCode" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="ApplicationModules" Relationship="UserSecurityModel.FK_ApplicationModule_Application" FromRole="Application" ToRole="ApplicationModule" />
+        </EntityType>
+        <EntityType Name="ApplicationModule">
+          <Key>
+            <PropertyRef Name="ApplicationModuleId" />
+          </Key>
+          <Property Name="ApplicationModuleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="UserSecurityModel.FK_ApplicationModule_Application" FromRole="ApplicationModule" ToRole="Application" />
+          <NavigationProperty Name="RolePermissions" Relationship="UserSecurityModel.FK_RolePermission_ApplicationModule" FromRole="ApplicationModule" ToRole="RolePermission" />
+        </EntityType>
+        <EntityType Name="PermissionLevel">
+          <Key>
+            <PropertyRef Name="PermissionLevelId" />
+          </Key>
+          <Property Name="PermissionLevelId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="RolePermissions" Relationship="UserSecurityModel.FK_RolePermission_PermissionLevel" FromRole="PermissionLevel" ToRole="RolePermission" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RolePermissions" Relationship="UserSecurityModel.FK_RolePermission_Role" FromRole="Role" ToRole="RolePermission" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ApplicationModuleId" />
+            <PropertyRef Name="PermissionLevelId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="ApplicationModuleId" Type="Int32" Nullable="false" />
+          <Property Name="PermissionLevelId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ApplicationModule" Relationship="UserSecurityModel.FK_RolePermission_ApplicationModule" FromRole="RolePermission" ToRole="ApplicationModule" />
+          <NavigationProperty Name="PermissionLevel" Relationship="UserSecurityModel.FK_RolePermission_PermissionLevel" FromRole="RolePermission" ToRole="PermissionLevel" />
+          <NavigationProperty Name="Role" Relationship="UserSecurityModel.FK_RolePermission_Role" FromRole="RolePermission" ToRole="Role" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MustChangePassword" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ApplicationModule_Application">
+          <End Role="Application" Type="UserSecurityModel.Application" Multiplicity="1" />
+          <End Role="ApplicationModule" Type="UserSecurityModel.ApplicationModule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="ApplicationModule">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_ApplicationModule">
+          <End Role="ApplicationModule" Type="UserSecurityModel.ApplicationModule" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationModule">
+              <PropertyRef Name="ApplicationModuleId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="ApplicationModuleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_PermissionLevel">
+          <End Role="PermissionLevel" Type="UserSecurityModel.PermissionLevel" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PermissionLevel">
+              <PropertyRef Name="PermissionLevelId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="PermissionLevelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermission_Role">
+          <End Role="Role" Type="UserSecurityModel.Role" Multiplicity="1" />
+          <End Role="RolePermission" Type="UserSecurityModel.RolePermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="RolePermission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UserSecurityModelStoreContainer" CdmEntityContainer="UserSecurityEntities">
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="UserSecurityModel.Application">
+              <MappingFragment StoreEntitySet="Application">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationCode" ColumnName="ApplicationCode" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ApplicationModules">
+            <EntityTypeMapping TypeName="UserSecurityModel.ApplicationModule">
+              <MappingFragment StoreEntitySet="ApplicationModule">
+                <ScalarProperty Name="ApplicationModuleId" ColumnName="ApplicationModuleId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermissionLevels">
+            <EntityTypeMapping TypeName="UserSecurityModel.PermissionLevel">
+              <MappingFragment StoreEntitySet="PermissionLevel">
+                <ScalarProperty Name="PermissionLevelId" ColumnName="PermissionLevelId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="UserSecurityModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RolePermissions">
+            <EntityTypeMapping TypeName="UserSecurityModel.RolePermission">
+              <MappingFragment StoreEntitySet="RolePermission">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationModuleId" ColumnName="ApplicationModuleId" />
+                <ScalarProperty Name="PermissionLevelId" ColumnName="PermissionLevelId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="UserSecurityModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MustChangePassword" ColumnName="MustChangePassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
