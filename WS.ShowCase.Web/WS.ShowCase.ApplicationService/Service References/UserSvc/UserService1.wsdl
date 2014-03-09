@@ -5,7 +5,7 @@
       <xsd:import schemaLocation="http://localhost:22701/UserService.svc?xsd=xsd0" namespace="http://www.wolversoft.com/UserSecurity/UserService/20120530" />
       <xsd:import schemaLocation="http://localhost:22701/UserService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WS.Security.Model" />
       <xsd:import schemaLocation="http://localhost:22701/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:22701/UserService.svc?xsd=xsd2" namespace="http://www.wolversoft.com/UserSecurity/Model/User/20130612" />
+      <xsd:import schemaLocation="http://localhost:22701/UserService.svc?xsd=xsd2" namespace="http://www.wolversoft.com/Security/Model/User/20130612" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IUserService_InsertUser_InputMessage">
@@ -35,6 +35,15 @@
   <wsdl:message name="IUserService_ChangePassword_ServiceFaultFault_FaultMessage">
     <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/WS.Security.Model" name="detail" element="q3:ServiceFault" />
   </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLogin" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetUserByLogin_ServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/WS.Security.Model" name="detail" element="q4:ServiceFault" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="InsertUser">
       <wsdl:input wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/InsertUser" message="tns:IUserService_InsertUser_InputMessage" />
@@ -50,6 +59,11 @@
       <wsdl:input wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/ChangePassword" message="tns:IUserService_ChangePassword_InputMessage" />
       <wsdl:output wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/ChangePasswordResponse" message="tns:IUserService_ChangePassword_OutputMessage" />
       <wsdl:fault wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/ChangePasswordServiceFaultFault" name="ServiceFaultFault" message="tns:IUserService_ChangePassword_ServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByLogin">
+      <wsdl:input wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/GetUserByLogin" message="tns:IUserService_GetUserByLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/GetUserByLoginResponse" message="tns:IUserService_GetUserByLogin_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.wolversoft.com/UserSecurity/UserService/20120530/IUserService/GetUserByLoginServiceFaultFault" name="ServiceFaultFault" message="tns:IUserService_GetUserByLogin_ServiceFaultFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

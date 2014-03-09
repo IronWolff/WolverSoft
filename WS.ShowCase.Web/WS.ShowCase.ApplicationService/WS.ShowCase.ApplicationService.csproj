@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gpg.Common.Wcf">
+      <HintPath>..\..\..\..\Projects trab\Gpg.ChannelIncentive.Web\Gpg.ChannelIncentive.Web\bin\Gpg.Common.Wcf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -51,11 +54,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\UserSecurityBLService\Reference.cs">
+    <Compile Include="Service References\UserSvc\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UserSecurityAppService.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -109,38 +113,22 @@
     <None Include="Service References\ProductSvc\WS.ShowCase.ApplicationService.ProductSvc.Provider.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserSecurityBLService\UserService.wsdl" />
-    <None Include="Service References\UserSecurityBLService\UserService.xsd">
+    <None Include="Service References\UserSvc\UserService.wsdl" />
+    <None Include="Service References\UserSvc\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSecurityBLService\UserService1.wsdl" />
-    <None Include="Service References\UserSecurityBLService\UserService1.xsd">
+    <None Include="Service References\UserSvc\UserService1.wsdl" />
+    <None Include="Service References\UserSvc\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSecurityBLService\UserService2.xsd">
+    <None Include="Service References\UserSvc\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserSecurityBLService\UserService3.xsd">
+    <None Include="Service References\UserSvc\UserService3.xsd">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ProductSvc\" />
-    <WCFMetadataStorage Include="Service References\UserSecurityBLService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSecurityBLService\UserService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSecurityBLService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSecurityBLService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\UserSecurityBLService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Service References\UserSvc\WS.ShowCase.ApplicationService.UserSvc.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +139,25 @@
       <Project>{2b7f412b-5c5e-4ba2-89b7-beb87c4f532f}</Project>
       <Name>WS.ShowCase.ViewModels %28WS.ShowCase.ViewModels\WS.ShowCase.ViewModels%29</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProductSvc\" />
+    <WCFMetadataStorage Include="Service References\UserSvc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSvc\UserService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSvc\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSvc\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\UserSvc\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProductSvc\ProductService.disco" />

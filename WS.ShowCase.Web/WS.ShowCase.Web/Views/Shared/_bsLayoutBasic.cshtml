@@ -10,8 +10,10 @@
     <link href="@Styles.Url("~/content/css")" rel="stylesheet"/>
     @RenderSection("head", required: false)
     @Html.Partial("_html5shiv")
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="~/Scripts/Account/Login.js"></script>
 
     @* favicons and touch icons go here *@
 </head>
@@ -27,7 +29,7 @@
                 <a class="brand" href="#" title="change in _bootstrapLayout.basic.cshtml">The ShowCase</a>
                 <div class="nav-collapse collapse">
                     @Html.Navigation()
-                    @Ajax.ActionLink("Login","Login","Account", new AjaxOptions{ HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "dialog_window_id", OnComplete = "your_js_function();" })
+                    @Ajax.ActionLink("Login", "Login", "Account", new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "loginDialog", OnComplete = "showLogin();" })
                 </div>
             </div>
         </div>
@@ -46,4 +48,6 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+<div id="loginDialog">
+</div>
 

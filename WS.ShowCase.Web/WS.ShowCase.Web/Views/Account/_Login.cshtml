@@ -2,29 +2,48 @@
 
 @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "frmLogin" }))
 {
-    <table id="loginTable">
-        <tr>
-            <td>@Html.LabelFor(m => m.UserName)</td>
-            <td>@Html.TextBoxFor(m => m.UserName)</td>
-            <td>@Html.ValidationMessageFor(m => m.UserName)</td>
-        </tr>
-        <tr>
-            <td>@Html.LabelFor(m => m.Password)</td>
-            <td>@Html.PasswordFor(m => m.Password)</td>
-            <td>@Html.ValidationMessageFor(m => m.Password)</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
-            <td>@Html.CheckBoxFor(m => m.RememberMe, new { @style = "float:left; margin-left:10px;" })</td>
-        </tr>
-        <tr>
-            @*<td>@Html.ActionLink("Register", "Register") if you don't have an account.</td>*@
-        </tr>
-        <tr>
-            <td colspan="3">
-                <input type="button" onclick="PerformLogin();" value="Login" style="float: right" />
-            </td>
-        </tr>
-    </table>
+    
+    <div id="loginModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <table id="loginTable" style="width:80%; margin-left:10%;">
+                        <tr>
+                            <td>@Html.LabelFor(m => m.UserName)</td>
+                            <td>@Html.TextBoxFor(m => m.UserName)</td>
+                            <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(m => m.Password)</td>
+                            <td>@Html.PasswordFor(m => m.Password)</td>
+                            <td>@Html.ValidationMessageFor(m => m.Password)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @style = "float:left; margin-left:10px;" })</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            @*<td>@Html.ActionLink("Register", "Register") if you don't have an account.</td>*@
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="PerformLogin();">Login</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    
+   
 }

@@ -10,10 +10,10 @@ namespace WS.ShowCase.ApplicationService
     {
         public static void InsertUser(UserSignUpModel userSignUpModel)
         {
-            using (var svc = new UserSecurityBLService.UserServiceClient())
-            {
-                svc.InsertUser(UserAdapter.GetUserDomainModelForSignUp(userSignUpModel));
-            }
+            //using (var svc = new UserSecurityBLService.UserServiceClient())
+            //{
+            //    //svc.InsertUser(UserAdapter.GetDomainModel(userSignUpModel));
+            //}
         }
 
         

@@ -10,6 +10,8 @@ using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using WS.ShowCase.Web.Filters;
 using WS.ShowCase.Web.Models;
+using WS.ShowCase.ViewModels;
+using WS.ShowCase.ApplicationService;
 
 namespace WS.ShowCase.Web.Controllers
 {
@@ -32,17 +34,15 @@ namespace WS.ShowCase.Web.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(UserLoginModel model)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
-            {
-                return RedirectToLocal(returnUrl);
+            string validationError = string.Empty;
+            if (ModelState.IsValid)
+            {                
+                UserModel userModel = UserSecurityAppService.AuthenticateUser(model, out validationError); 
             }
 
-            // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
-            return View(model);
+            return RedirectToAction("Index", "Home");
         }
 
         //

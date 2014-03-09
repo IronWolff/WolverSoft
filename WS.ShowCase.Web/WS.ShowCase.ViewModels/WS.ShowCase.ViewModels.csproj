@@ -50,6 +50,7 @@
     <Compile Include="ObjectModels\LoginModel.cs" />
     <Compile Include="ViewModels\BrandFilterViewModel.cs" />
     <Compile Include="ViewModels\BrandListViewModel.cs" />
+    <Compile Include="ViewModels\UserLoginModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -273,6 +273,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Account\Login.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\html5shiv.js" />
@@ -356,6 +357,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WS.ShowCase.ApplicationService\WS.ShowCase.ApplicationService.csproj">
+      <Project>{721bd712-7057-4fd4-a8de-42a242a0bc27}</Project>
+      <Name>WS.ShowCase.ApplicationService %28WS.ShowCase.ApplicationService\WS.ShowCase.ApplicationService%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WS.ShowCase.ViewModels\WS.ShowCase.ViewModels.csproj">
+      <Project>{2b7f412b-5c5e-4ba2-89b7-beb87c4f532f}</Project>
+      <Name>WS.ShowCase.ViewModels %28WS.ShowCase.ViewModels\WS.ShowCase.ViewModels%29</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
