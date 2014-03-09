@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e1e01d95cd3147dab7322bc30d28cbb1" Name="Diagram1" ZoomLevel="10">
+        <EntityTypeShape EntityType="ShowCaseModel.Brand" Width="1.5" PointX="2.5332486380512123" PointY="11.583337953120163" />
+        <EntityTypeShape EntityType="ShowCaseModel.Category" Width="1.5" PointX="7.540679625952933" PointY="2.7453332109122228" />
+        <EntityTypeShape EntityType="ShowCaseModel.Product" Width="1.5" PointX="3.6105204725687026" PointY="13.791239953502659" />
+        <EntityTypeShape EntityType="ShowCaseModel.Provider" Width="1.5" PointX="5.4133182956899137" PointY="3.2684476986846178" />
+        <EntityTypeShape EntityType="ShowCaseModel.User" Width="1.5" PointX="6.8191127454951008" PointY="18.934632950897623" />
+        <AssociationConnector Association="ShowCaseModel.FK_Products_Brand" />
+        <AssociationConnector Association="ShowCaseModel.FK_Products_Categories" />
+        <AssociationConnector Association="ShowCaseModel.FK_Products_Providers" />
+        <AssociationConnector Association="ShowCaseModel.FK_Products_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
