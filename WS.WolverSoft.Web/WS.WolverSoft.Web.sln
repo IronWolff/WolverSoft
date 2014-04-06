@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.WolverSoft.ApplicationSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.WolverSoft.ViewModels", "WS.WolverSoft.ViewModels\WS.WolverSoft.ViewModels.csproj", "{726BF7A1-6261-4341-B7E9-F8E2BB36A6D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.WolverSoft.Web", "WS.WolverSoft.Web\WS.WolverSoft.Web.csproj", "{51C1C48C-C54E-45EF-9A33-840AE0F27DFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.WolverSoft.Web", "WS.WolverSoft.Web\WS.WolverSoft.Web.csproj", "{D9158D96-9B73-4526-9C22-9B88336098BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{726BF7A1-6261-4341-B7E9-F8E2BB36A6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{726BF7A1-6261-4341-B7E9-F8E2BB36A6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{726BF7A1-6261-4341-B7E9-F8E2BB36A6D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51C1C48C-C54E-45EF-9A33-840AE0F27DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51C1C48C-C54E-45EF-9A33-840AE0F27DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51C1C48C-C54E-45EF-9A33-840AE0F27DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51C1C48C-C54E-45EF-9A33-840AE0F27DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9158D96-9B73-4526-9C22-9B88336098BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9158D96-9B73-4526-9C22-9B88336098BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9158D96-9B73-4526-9C22-9B88336098BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9158D96-9B73-4526-9C22-9B88336098BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +40,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{37897A9B-A7AD-44AA-A157-4A5E0073D098} = {BAB96BC8-A211-4A38-A6DC-04EBFB9AA031}
 		{726BF7A1-6261-4341-B7E9-F8E2BB36A6D5} = {09AA61BA-E189-485B-83D2-61D6693154A7}
-		{51C1C48C-C54E-45EF-9A33-840AE0F27DFA} = {9541EDB4-B639-477D-8E21-80854A26984A}
+		{D9158D96-9B73-4526-9C22-9B88336098BA} = {9541EDB4-B639-477D-8E21-80854A26984A}
 	EndGlobalSection
 EndGlobal
